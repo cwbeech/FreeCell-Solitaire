@@ -80,5 +80,10 @@ namespace Ksu.Cis300.FreeCell
                 CardPainter.DrawHighlight(g, 0, CardPainter.CardHeight);
             }
         }
+
+        private void CardLocation_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

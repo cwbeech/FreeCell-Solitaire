@@ -166,5 +166,10 @@ namespace Ksu.Cis300.FreeCell
         {
             _game.MoveAll();
         }
+
+        private void uxSeed_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

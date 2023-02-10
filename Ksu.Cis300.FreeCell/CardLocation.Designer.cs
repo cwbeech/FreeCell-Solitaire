@@ -37,6 +37,7 @@
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.DoubleBuffered = true;
             this.Name = "CardLocation";
+            this.Load += new System.EventHandler(this.CardLocation_Load);
             this.ResumeLayout(false);
 
         }
