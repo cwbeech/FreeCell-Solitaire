@@ -103,7 +103,7 @@ namespace Ksu.Cis300.FreeCell
                 if (isEmpty)
                 {
                     AddCardToCardLocation(temp.Card, loc);
-                    RemoveCardFromCardLocation(temp); //this probably isn't necessary
+                    RemoveCardFromCardLocation(temp); 
                 }
                 DeselectFreeCell();
             }
@@ -111,12 +111,19 @@ namespace Ksu.Cis300.FreeCell
             {
                 TableauColumn temp = new TableauColumn();
                 temp = _tableauColumnSelected;
-                if (temp.NumberSelected <= _emptyFreeCells.Count)
+                if (temp.NumberSelected <= 1)
                 {
-                    for (int i = 0; i < temp.NumberSelected; i++)
+                    bool isEmpty = false;
+                    for (int i = 0; i < _emptyFreeCells.Count; i++)
+                    {
+                        if (loc == _emptyFreeCells.ToArray()[i]) //determines if selection is empty. If passed, the turn is legal.
+                        {
+                            isEmpty = true;
+                        }
+                    }
+                    if (isEmpty)
                     {
                         AddCardToCardLocation(temp.Column.Pop(), loc);
-
                     }
                 }
                 DeselectTableauColumn();
@@ -237,12 +244,6 @@ namespace Ksu.Cis300.FreeCell
                 }
                 DeselectTableauColumn();
             }
-            /*
-            TableauColumn temp = new TableauColumn();
-            temp = TableauColumnSelected;
-
-            DeselectTableauColumn();
-            */
         }
 
         /// <summary>
