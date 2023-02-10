@@ -442,7 +442,7 @@ namespace Ksu.Cis300.FreeCell
         /// <summary>
         /// Selects a free cell.
         /// </summary>
-        /// <param name="cl"></param>
+        /// <param name="cl">The CardLocation of the FreeCell being selected</param>
         private void SelectFreeCell(CardLocation cl)
         {
             cl.IsSelected = true;
@@ -453,8 +453,8 @@ namespace Ksu.Cis300.FreeCell
         /// <summary>
         /// Selects a TableauColumn.
         /// </summary>
-        /// <param name="tc"></param>
-        /// <param name="number"></param>
+        /// <param name="tc">TableauColumn being selected.</param>
+        /// <param name="number">The number of Cards being selected.</param>
         private void SelectTableauColumn(TableauColumn tc, int number)
         {
             tc.NumberSelected = number;
@@ -514,8 +514,8 @@ namespace Ksu.Cis300.FreeCell
         /// <summary>
         /// Determines whether or not a card can be placed on a home cell
         /// </summary>
-        /// <param name="c"></param>
-        /// <param name="cl"></param>
+        /// <param name="c">Card being tested.</param>
+        /// <param name="cl">CardLocation of the HomeCell.</param>
         /// <returns>Returns a boolean value representing whether or not the move is legal.</returns>
         private static bool CanBePlacedOnHomeCell(Card c, CardLocation cl)
         {
